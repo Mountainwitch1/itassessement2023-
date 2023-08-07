@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 1. Display different data types
+        var numeric = 2;
+        var float = 3.5;
+        var string = "string";
+        var bool = true;
+        document.write("Numeric: " + numeric + "<br>");
+        document.write("Float: " + float + "<br>");
+        document.write("String: " + string + "<br>");
+        document.write("Boolean: " + bool + "<br>");
+
+
+
+        // 2. Input and Display Name and ID
+        var name = prompt("Enter your name: ");
+        var id = prompt("Student id: ");
+        document.write("Name: " + name + "<br>");
+        document.write("ID: " + id + "<br>");
+        alert(name + id);
+
+
+
+        // 3. Display Division based on Marks
+        var marks = prompt("Enter Marks Attained: ");
+        if (marks >= 80 && marks <= 100)
+            document.write("Distinction <br>");
+        else if (marks >= 60 && marks < 80)
+            document.write("First Div <br>");
+        else if (marks >= 50 && marks < 60)
+            document.write("Second Div <br>");
+        else if (marks >= 40 && marks < 50)
+            document.write("Third Div <br>");
+        else
+            document.write("Failed <br>");
+
+
+
+        // 4. Display Day based on Number
+        var Day = prompt("Enter any number between 1-7: ");
+        switch (Day) {
+            case '1':
+                document.write("Sunday");
+                break;
+            case '2':
+                document.write("Monday");
+                break;
+            case '3':
+                document.write("Tuesday");
+                break;
+            case '4':
+                document.write("Wednesday");
+                break;
+            case '5':
+                document.write("Thursday");
+                break;
+            case '6':
+                document.write("Friday");
+                break;
+            case '7':
+                document.write("Saturday");
+                break;
+            default:
+                document.write("Invalid");
+        }
+
+
+        // 5. Display Images in a Loop
+        for (var i = 1; i <= 4; i++) {
+            var image_name = i + ".jpg";
+            document.write('<img src="' + image_name + '" alt="Image ' + i + '">');
+        }
+
+
+
+        // 6. Display Multiplication Table
+        for (var i = 1; i <= 10; i++) {
+            var result = 5 * i;
+            document.write("5 * " + i + " = " + result + "<br>");
+        }
+
+
+        // 7. Display Table with Alternating Background Colors
+        var table = document.createElement("table");
+        table.id = "Table";
+        document.body.appendChild(table);
+
+        var tableHead = document.createElement("thead");
+        var headerRow = tableHead.insertRow();
+        headerRow.innerHTML = "<th>Header 1</th><th>Header 2</th><th>Header 3</th>";
+        table.appendChild(tableHead);
+
+        var tableBody = document.createElement("tbody");
+        for (var i = 0; i < 3; i++) {
+            var row = tableBody.insertRow();
+            row.innerHTML = "<td>Data " + (i * 3 + 1) + "</td><td>Data " + (i * 3 + 2) + "</td><td>Data " + (i * 3 + 3) + "</td>";
+            if (i % 2 === 1) {
+                row.style.backgroundColor = "lightgray";
+            }
+        }
+        table.appendChild(tableBody);
+
+
+
+        // 8. Array Manipulation
+        let my_colour = ["Red", "Green", "White", "Black"];
+        let x = my_colour.toString();
+        console.log(x);
+        let y = my_colour.join();
+        console.log(y);
+        let z = my_colour.join('+');
+        console.log(z);
+
+
+        // 9. Sum and Product of Array
+        function sum_product(array) {
+            let sum = 0;
+            let product = 1;
+            for (let i = 0; i < array.length; i++) {
+                sum += array[i];
+                product *= array[i];
+            }
+            return [sum, product];
+        }
+        const array = [1, 2, 3, 4, 5];
+        const [sum, product] = sum_product(array);
+        console.log(`Sum of given array is : ${sum}`);
+        console.log(`Product of given array is: ${product}`);
+
+
+
+        // 10. Rectangle Area Calculation
+        function calculate_area(length, breadth) {
+            if (length <= 0 || breadth <= 0) {
+                return "L or B can't be negative.";
+            }
+            const area = length * breadth;
+            return area;
+        }
+        const length = 1;
+        const breadth = 5;
+        const area = calculate_area(length, breadth);
+        console.log(`The area of the rectangle is: ${area}`);
+
+
+
+        // 11. Adding Items to Array and Displaying
+        const items = [];
+
+        function add_array(item) {
+            items.push(item);
+        }
+
+        function display_items() {
+            if (items.length === 0) {
+                console.log("Null array");
+            } else {
+                console.log("Items in the arrays are:");
+                for (let i = 0; i < items.length; i++) {
+                    console.log(items[i]);
+                }
+            }
+        }
+        add_array("Item 1");
+        add_array("Item 2");
+        add_array("Item 3");
+        display_items();
+    </script>
+</body>
+
+</html>
